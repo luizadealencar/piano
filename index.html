@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piano Maluco</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="selo">Tone.js Synth</p>
+      <h1>Piano <span>Maluco</span></h1>
+      <p>Use o teclado do computador e crie sons coloridos.</p>
+    </header>
+
+    <section class="painel">
+      <div class="controles">
+        <div>
+          <label for="instrumento">Instrumento</label>
+          <select id="instrumento">
+            <option value="piano">Piano</option>
+            <option value="synth">Sintetizador</option>
+            <option value="organ">Orgao</option>
+            <option value="bass">Baixo</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="volume">Volume: <strong id="valorVolume">70%</strong></label>
+          <input id="volume" type="range" min="0" max="100" value="70">
+        </div>
+
+      </div>
+
+      <div id="teclado" class="teclado" aria-label="Teclado musical"></div>
+
+      <div class="ajuda">
+        <span>Teclas:</span>
+        <strong>A</strong>
+        <strong>S</strong>
+        <strong>D</strong>
+        <strong>F</strong>
+        <strong>G</strong>
+        <strong>H</strong>
+        <strong>J</strong>
+        <strong>K</strong>
+      </div>
+    </section>
+
+    <section class="aulas" aria-labelledby="titulo-aulas">
+      <h2 id="titulo-aulas">Aprenda uma musica</h2>
+      <p>Escolha uma musica e siga as notas destacadas. Use as teclas do piano na tela ou do computador.</p>
+      <div class="opcoes-musica">
+        <button type="button" data-musica="estrelinha">Brilha, brilha estrelinha</button>
+        <button type="button" data-musica="alegria">Ode a Alegria</button>
+        <button type="button" data-musica="cordeirinho">Mary tinha um cordeirinho</button>
+        <button type="button" data-musica="frere">Frere Jacques</button>
+        <button type="button" data-musica="jingle">Jingle Bells</button>
+        <button type="button" data-musica="fazenda">Seu MacDonald tinha uma fazenda</button>
+        <button type="button" data-musica="ponte">A ponte de Londres</button>
+        <button type="button" data-musica="remo">Remo, remo, seu barco</button>
+      </div>
+      <div id="sequencia-musica" class="sequencia-musica" aria-live="polite">
+        Escolha uma musica para ver as notas.
+      </div>
+      <p id="progresso-musica" class="progresso-musica"></p>
+    </section>
+
+    <div id="notificacao" class="notificacao" aria-live="polite">
+      Clique em uma tecla ou pressione uma tecla do computador
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
